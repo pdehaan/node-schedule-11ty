@@ -1,14 +1,24 @@
 {
   "name": "node-schedule-11ty",
+  "description": "Website for [**pdehaan/node-schedule**](https://github.com/pdehaan/node-schedule).",
   "version": "1.0.0",
   "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/node-schedule-11ty/issues"
+  },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "node-schedule": "github:pdehaan/node-schedule"
   },
-  "keywords": [],
+  "homepage": "https://node-schedule.pdehaan.now.sh",
+  "keywords": ["node", "nodejs", "11ty", "eleventy"],
   "license": "MPL-2.0",
-  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/node-schedule-11ty.git"
+  },
   "scripts": {
     "build": "eleventy",
     "deploy": "npx now _site",
