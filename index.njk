@@ -1,0 +1,53 @@
+---
+title: Node.js release schedule
+layout: default.njk
+---
+
+<main>
+  <header>
+    <h1>{{ title | safe }}</h1>
+  </header>
+  {% for release in schedule %}
+    <section>
+      <h2>{{ release.version }} <small>{% if release.codename %}<sup>{{ release.codename }}</sup>{% endif %} (<a href="{{ release.latest.uri | url }}" target="_blank" rel="noopener noreferrer">{{ release.latest.file2 }}</a> &mdash; <span title="{{ release.latest.size }} bytes">{{ release.latest.size2 }}</span>)</small></h2>
+      <h3></h3>
+      
+      <table>
+        <tbody>
+          <tr>
+            <th>Latest:</th>
+            <td>{% time release.latest.date %}</td>
+            <td class="date__relative">{{ release.latest.date2 }}</td>
+          </tr>
+          <tr>
+            <th>Start:</th>
+            <td>{% time release.start %}</td>
+            <td class="date__relative">{{ release.start2 }}</td>
+          </tr>
+          {%- if release.lts %}
+          <tr>
+            <th>LTS:</th>
+            <td>{% time release.lts %}</td>
+            <td class="date__relative">{{ release.lts2 }}</td>
+          </tr>
+          {%- endif %}
+          {%- if release.maintenance %}
+          <tr>
+            <th>Maintenance:</th>
+            <td>{% time release.maintenance %}</td>
+            <td class="date__relative">{{ release.maintenance2 }}</td>
+          </tr>
+          {%- endif %}
+          <tr>
+            <th>End:</th>
+            <td>{% time release.end %}</td>
+            <td class="date__relative">{{ release.end2 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    {% if not loop.last %}
+    <hr/>
+    {% endif %}
+  {% endfor %}
+</main>

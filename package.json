@@ -1,0 +1,19 @@
+{
+  "name": "node-schedule-11ty",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "node-schedule": "github:pdehaan/node-schedule"
+  },
+  "keywords": [],
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "deploy": "npx now _site",
+    "format": "npx prettier _site/*.html --write",
+    "serve": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
